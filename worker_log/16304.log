@@ -1,0 +1,4 @@
+INFO:pika.adapters.base_connection:Connecting to 127.0.0.1:5672
+INFO:pika.adapters.blocking_connection:Closing connection (200): Normal shutdown
+WARNING:pika.adapters.base_connection:Unknown state on disconnect: 0
+WARNING:pika.adapters.base_connection:Unknown state on disconnect: 0
