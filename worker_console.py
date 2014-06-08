@@ -49,8 +49,8 @@ channel.queue_declare(queue='urqa-queue', durable=True)
 channel.queue_bind(exchange ='urqa-exchange', queue = 'urqa-queue')
 
 #PROJECT_DIR = get_config('project_dir')
-PROJECT_DIR = "/home/urqa/urqa/release/URQA-Server/soma3"
-#PROJECT_DIR = "/home/urqa/urqa/release/"
+PROJECT_DIR = "/home/urqa/URQA-Server/soma3"
+#PROJECT_DIR = "/home/urqa/urqa/release/" 
 
 cfg = ConfigParser.RawConfigParser()
 cfg.read(os.path.join(os.path.dirname(__file__),'config.cfg'))
@@ -86,7 +86,7 @@ def get_config(option):
 #Create and engine and get the metadata
 try :
     Base = declarative_base()
-    engine= create_engine("mysql://root:stanly@ur-qa.com/urqa?charset=utf8",encoding='utf-8',echo=False)
+    engine= create_engine("mysql://root:@stanly@urqa/urqa?charset=utf8",encoding='utf-8',echo=False)
     #engine= create_engine("mysql://root:stanly@ur-qa.com/urqa",encoding='utf-8',echo=True)
     metadata = MetaData(bind=engine)
     session = create_session(bind=engine)
