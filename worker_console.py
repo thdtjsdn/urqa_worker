@@ -86,8 +86,9 @@ def get_config(option):
 #Create and engine and get the metadata
 try :
     Base = declarative_base()
-    engine= create_engine("mysql://root:@stanly@urqa/urqa?charset=utf8",encoding='utf-8',echo=False)
-    #engine= create_engine("mysql://root:stanly@ur-qa.com/urqa",encoding='utf-8',echo=True)
+    engine= create_engine("mysql://root:@stanly@urqa@127.0.0.1:3306/urqa?charset=utf8",encoding='utf-8',echo=False)
+    #engine= create_engine("mysql://root:@stanly@urqa/urqa?charset=utf8",encoding='utf-8',echo=False)
+    #engine= create_engine("mysql://root:@stanly@urqa@125.209.196.85/urqa",encoding='utf-8',echo=True)
     metadata = MetaData(bind=engine)
     session = create_session(bind=engine)
 except Exception as e:
@@ -158,7 +159,7 @@ def callback(ch, method, properties,body):
     #idinstance = firstData['idinstance']
 
     if tag == 'connect':
-
+	print "connect"
 
         #step1: apikey를  project찾기
         try:
